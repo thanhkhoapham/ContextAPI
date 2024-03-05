@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { Todo } from "../api/todos/types";
-import { TodoAPI } from "../api/todos/client";
+import { Todo } from "../../../api/todos/types";
+import { TodoAPI } from "../../../api/todos/client";
 
 type TodosContextProps = {
     todos: Todo[],

@@ -1,0 +1,6 @@
+.block .ant-badge-count {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}

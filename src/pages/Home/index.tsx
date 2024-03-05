@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
 import { Tabs, Tooltip } from "antd";
 import type { TabsProps } from "antd";
-import TodoListv2 from "../TodoListv2";
 import TodoList from "../TodoList/TodoList";
-import TodosContextProvider from "../../contexts/TodosContextProvider";
+import TodosContextProvider from "../store/TodoListV1/TodosContextProvider";
 import "./styles.css";
+import { AppProvider } from "../store/Product/context";
+import ShoppingCart from "../ShoppingCart";
 
 const onChange = (key: string) => {
   console.log(key);
@@ -23,11 +24,15 @@ const items: TabsProps["items"] = [
   {
     key: "2",
     label: (
-      <Tooltip placement="top" title={"Not complete"}>
-        Todo list v2
+      <Tooltip placement="top" title={"Mặc dù đã đọc, học và làm theo hướng dẫn, nhưng tôi vẫn chưa hiểu lắm"}>
+        Shoping Cart
       </Tooltip>
     ),
-    children: <TodoListv2 />,
+    children: (
+      <AppProvider>
+        <ShoppingCart />
+      </AppProvider>
+    ),
   },
   {
     key: "3",
