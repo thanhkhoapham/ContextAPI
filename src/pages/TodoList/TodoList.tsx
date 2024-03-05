@@ -1,6 +1,6 @@
-import {  useState } from "react";
+import { useState } from "react";
 import InputField from "../../components/inputs/InputField";
-import { useTodosContext } from "../store/TodoListV1/utils";
+import { useTodosContext } from "../store/TodoList/utils";
 import { TodoAPI } from "../../api/todos/client";
 import TodoItem from "../../components/todo/TodoItem";
 import { Button, Input } from "antd";
@@ -10,8 +10,8 @@ const http = new TodoAPI();
 const TodoList = () => {
   const { todos, setTodos } = useTodosContext();
   const [addedValue, setAddedValue] = useState("");
-  
-  const [input, setInput] = useState("")
+
+  const [input, setInput] = useState("");
   const handleAddNewTodo = async () => {
     const addedTodo = await http.addNew({
       title: addedValue,
@@ -30,12 +30,29 @@ const TodoList = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-col">
+      <section className="w-[70%] flex items-center py-3">
+        <div className="flex h-full">
+          <h1 className="text-xl font-bold pr-[10px]">Add Todo: </h1>
+          <InputField value={addedValue} onChange={handleAddedValueChange} />
+        </div>
+        <Button
+          className="ml-4 bg-white flex items-center"
+          onClick={handleAddNewTodo}
+        >
+          Add to list
+        </Button>
+      </section>
+
       <section className="w-[70%] mr-[50px]">
         <div className="flex">
           <span className="font-bold pr-[10px] text-2xl">Filter:</span>
-          <Input value={input} onChange={(e) => setInput(e.target.value)}></Input>
-          <Button className="pl-[10px] bg-pink-400" onClick={handleSearch}>
+          <Input
+            className="w-[190px] pr-[10px]"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          ></Input>
+          <Button className="ml-[15px] bg-white" onClick={handleSearch}>
             Find
           </Button>
         </div>
@@ -47,10 +64,6 @@ const TodoList = () => {
             </li>
           ))}
         </ul>
-      </section>
-      <section className="w-[30%]">
-        <InputField value={addedValue} onChange={handleAddedValueChange} />
-        <Button onClick={handleAddNewTodo}>Add to list</Button>
       </section>
     </div>
   );

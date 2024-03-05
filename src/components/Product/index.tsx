@@ -16,13 +16,13 @@ const Products = (): ReactElement => {
   return (
     <div className="block flex items-center">
       <Button className="bg-white m-3" onClick={onClick}>
-        Click cho vui
+        Click
       </Button>
       <div>
         <Badge
           className="site-badge-count-109"
           showZero
-          count={state.shoppingCart ?? 0}
+          count={state.shoppingCart}
           style={{ backgroundColor: "#52c41a" }}
         />
       </div>

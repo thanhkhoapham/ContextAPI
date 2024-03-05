@@ -1,7 +1,7 @@
 import React from "react";
 import { AppContext } from "../../pages/store/Product/context";
 import { Types } from "../../pages/store/Product/reducer";
-import { Button, Input } from "antd";
+import { Button, Divider, Input } from "antd";
 
 const List = () => {
   const [form, setForm] = React.useState({
@@ -65,21 +65,23 @@ const List = () => {
           />
         </div>
       </div>
+
+
       <Button
-        className="h-full bg-emerald-200 text-2xl font-bold flex items-center justify-center"
+        className="w-min h-full bg-white text-sm font-bold flex items-center justify-center"
         onClick={createProduct}
       >
-        create
+        Create
       </Button>
       <div style={{ marginTop: 20 }}>
         {state.products.map((c) => (
           <div className="flex items-center pb-3 justify-between">
-            <div className="mr-[20px] font-bold text-lg bg-orange-300 flex-1 p-2">
+            <div className="mr-[20px] font-bold text-lg flex-1 p-2">
               <span>{c.name}</span>
               <span>{c.price}</span>
             </div>
             <Button
-              className="bg-red-200 text-base font-bold flex items-center justify-center"
+              className="bg-white text-base font-bold flex items-center justify-center"
               onClick={() => deleteProduct(c.id)}
             >
               delete
