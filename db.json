@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Complete project proposal for upcoming conference presentation"
+    },
+    {
+      "id": "2",
+      "title": "Review and finalize quarterly financial report"
+    },
+    {
+      "id": "3",
+      "title": "Prepare presentation slides for team meeting next Monday"
+    },
+    {
+      "id": "4",
+      "title": "Research and draft outline for new product launch strategy"
+    },
+    {
+      "id": "5",
+      "title": "Coordinate with marketing team on social media campaign for product promotion"
+    },
+    {
+      "id": "6",
+      "title": "Organize and schedule interviews for potential candidates"
+    },
+    {
+      "id": "7",
+      "title": "Attend networking event to expand professional connections"
+    },
+    {
+      "id": "8",
+      "title": "Plan and book travel arrangements for business trip next month"
+    },
+    {
+      "id": "9",
+      "title": "Update website content to reflect latest company updates"
+    },
+    {
+      "id": "10",
+      "title": "Research and compile market trends analysis for quarterly review meeting"
+    }
+  ]
+}
